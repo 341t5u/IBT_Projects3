@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Doro wot",
+    "category": "Main",
+    "price": 1500,
+    "spicy": true
+  },
+  {
+    "id": 2,
+    "name": "Tibs",
+    "category": "Main",
+    "price": 1300,
+    "spicy": false
+  },
+  {
+    "id": 3,
+    "name": "Buna",
+    "category": "Drink",
+    "price": 80,
+    "spicy": false
+  },
+  {
+    "id": 4,
+    "name": "Shiro",
+    "category": "Side",
+    "price": 800,
+    "spicy": false
+  },
+  {
+    "id": 5,
+    "name": "kitfo",
+    "category": "Main",
+    "price": 1800,
+    "spicy": true
+  },
+  {
+    "id": 6,
+    "name": "Mesir wot",
+    "category": "Side",
+    "price": 700,
+    "spicy": true
+  }
+]
