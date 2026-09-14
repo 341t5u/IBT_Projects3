@@ -1,0 +1,140 @@
+#root {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  color: #666;
+}
+
+main > h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.dish {
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  background: #fff;
+}
+
+.dish h2 {
+  margin-bottom: 0.75rem;
+}
+
+.dish p {
+  font-weight: bold;
+}
+
+@media (max-width: 700px) {
+  .menu {
+    grid-template-columns: 1fr;
+  }
+}
+.category-bar {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.category-bar button {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background: white;
+  cursor: pointer;
+}
+
+.category-bar button.active {
+  background: #7b2d26;
+  color: white;
+  border-color: #7b2d26;
+}
+.order-summary {
+  margin: 30px 0;
+  padding: 20px;
+}
+.delivery-section {
+  margin: 40px 0;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: white;
+}
+
+.delivery-section h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.delivery-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 500px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #7b2d26;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+}
+
+.delivery-form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #7b2d26;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.delivery-form button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
