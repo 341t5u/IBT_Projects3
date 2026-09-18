@@ -1,0 +1,28 @@
+/* Base styles */
+body {
+  margin: 0;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+/* Light Theme */
+.app.light {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  min-height: 100vh;
+}
+
+/* Dark Theme */
+.app.dark {
+  background-color: #121212;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* Style buttons and containers for dark mode */
+.app.dark button {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #555555;
+}

@@ -1,0 +1,30 @@
+/* src/index.css */
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  padding: 1rem;
+}
+
+/* Light Theme */
+body.light {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+}
+
+/* Dark Theme */
+body.dark {
+  background-color: #121212 !important;
+  color: #ffffff !important;
+}
+
+body.dark button {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #666666;
+}
+
+body.dark input {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border: 1px solid #555555;
+}
