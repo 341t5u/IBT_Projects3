@@ -26,3 +26,595 @@ body {
   color: #ffffff;
   border: 1px solid #555555;
 }
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f5f5;
+  color: #222;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* =========================
+   APP CONTAINER
+========================= */
+
+#root {
+  min-height: 100vh;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  padding: 16px 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.header nav {
+  display: flex;
+  gap: 20px;
+}
+
+.header a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+.header a:hover {
+  color: #e67e22;
+}
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+.main-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 30px auto;
+}
+
+/* =========================
+   MENU
+========================= */
+
+.menu {
+  margin-bottom: 40px;
+}
+
+.menu h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+/* Category buttons */
+
+.category-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.category-buttons button {
+  border: 1px solid #ddd;
+  background-color: white;
+  padding: 9px 18px;
+  border-radius: 20px;
+}
+
+.category-buttons button:hover {
+  background-color: #f0f0f0;
+}
+
+/* =========================
+   DISH / FOOD CARDS
+========================= */
+
+.menu-list {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+
+  gap: 20px;
+}
+
+.dish-card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  transition: transform 0.2s;
+}
+
+.dish-card:hover {
+  transform: translateY(-4px);
+}
+
+.dish-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.dish-card-content {
+  padding: 16px;
+}
+
+.dish-card h3 {
+  margin: 0 0 8px;
+}
+
+.dish-card p {
+  color: #666;
+}
+
+.dish-price {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.dish-card button {
+  width: 100%;
+  border: none;
+  padding: 11px;
+
+  background-color: #e67e22;
+  color: white;
+
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.dish-card button:hover {
+  background-color: #cf6d17;
+}
+
+/* =========================
+   CART
+========================= */
+
+.cart {
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+
+  margin-top: 30px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.cart h2 {
+  margin-top: 0;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #eee;
+  padding: 15px 0;
+}
+
+.cart-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cart-item-name {
+  font-weight: bold;
+}
+
+.cart-item-price {
+  color: #666;
+}
+
+/* Cart quantity */
+
+.cart-quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-quantity button {
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid #ddd;
+  background-color: white;
+
+  border-radius: 5px;
+}
+
+.cart-quantity button:hover {
+  background-color: #eee;
+}
+
+/* Remove button */
+
+.remove-button {
+  border: none;
+  background-color: transparent;
+  color: #d9534f;
+}
+
+.remove-button:hover {
+  text-decoration: underline;
+}
+
+/* Cart total */
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 20px;
+  font-weight: bold;
+
+  padding-top: 20px;
+}
+
+/* Pay button */
+
+.pay-button {
+  width: 100%;
+  margin-top: 20px;
+
+  padding: 14px;
+
+  border: none;
+  border-radius: 7px;
+
+  background-color: #27ae60;
+  color: white;
+
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.pay-button:hover {
+  background-color: #219150;
+}
+
+/* =========================
+   CHECKOUT PAGE
+========================= */
+
+.checkout-page {
+  width: 90%;
+  max-width: 650px;
+
+  margin: 40px auto;
+}
+
+.checkout-card {
+  background-color: white;
+
+  padding: 30px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-card h1 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.checkout-description {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+
+  padding: 12px;
+
+  border: 1px solid #ccc;
+  border-radius: 6px;
+
+  font-size: 15px;
+
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #e67e22;
+
+  box-shadow: 0 0 0 2px rgba(230, 126, 34, 0.15);
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Error */
+
+.form-error {
+  margin-top: 6px;
+
+  color: #d93025;
+
+  font-size: 14px;
+}
+
+/* Input with error */
+
+.input-error {
+  border-color: #d93025 !important;
+}
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+
+.submit-button {
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+  border-radius: 7px;
+
+  background-color: #27ae60;
+  color: white;
+
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.submit-button:hover {
+  background-color: #219150;
+}
+
+.submit-button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+/* =========================
+   SUBMIT ERROR
+========================= */
+
+.submit-error {
+  background-color: #fdeaea;
+
+  border: 1px solid #e0a0a0;
+
+  color: #b42318;
+
+  padding: 12px;
+
+  border-radius: 6px;
+
+  margin-bottom: 20px;
+}
+
+/* =========================
+   LOADING / EMPTY
+========================= */
+
+.loading {
+  text-align: center;
+
+  padding: 40px;
+
+  color: #666;
+}
+
+.empty {
+  text-align: center;
+
+  padding: 40px;
+
+  color: #777;
+}
+
+/* =========================
+   CART BADGE
+========================= */
+
+.cart-badge {
+  background-color: #e67e22;
+
+  color: white;
+
+  min-width: 22px;
+  height: 22px;
+
+  border-radius: 50%;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+
+  margin-left: 5px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 15px;
+  }
+
+  .header nav {
+    gap: 10px;
+  }
+
+  .main-container {
+    width: 94%;
+    margin: 20px auto;
+  }
+
+  .menu-list {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .checkout-page {
+    width: 94%;
+    margin: 20px auto;
+  }
+
+  .checkout-card {
+    padding: 20px;
+  }
+}
+```css
+/* Menu Page */
+.menu-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.menu-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 35px;
+}
+
+/* Grid for dishes */
+.menu-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+}
+
+/* Individual dish card */
+.dish-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dish-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.dish-card h3 {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.dish-price {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Add to cart button */
+.add-cart-btn {
+  width: 100%;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #f59e0b;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.add-cart-btn:hover {
+  background: #d97706;
+}
+
+.add-cart-btn:active {
+  transform: scale(0.98);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .menu-container {
+    padding: 25px 15px;
+  }
+
+  .menu-title {
+    font-size: 28px;
+  }
+
+  .menu-list {
+    grid-template-columns: 1fr;
+  }
+}
+```

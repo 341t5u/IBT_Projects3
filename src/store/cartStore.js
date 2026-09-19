@@ -1,25 +1,94 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
 
-export const useCartStore = create(
-  persist(
-    (set) => ({
-      items: [],
+export const useCartStore = create(function (set) {
+  return {
+    cart: [],
 
-      addItem: (dish) =>
-        set((state) => ({
-          items: [...state.items, dish],
-        })),
+    addItem: function (item) {
+      set(function (state) {
+        const existingItem = state.cart.find(function (cartItem) {
+          return cartItem.id === item.id;
+        });
 
-      removeItem: (id) =>
-        set((state) => ({
-          items: state.items.filter((item) => item.id !== id),
-        })),
+        if (existingItem) {
+          return {
+            cart: state.cart.map(function (cartItem) {
+              if (cartItem.id === item.id) {
+                return {
+                  ...cartItem,
+                  quantity: cartItem.quantity + 1,
+                };
+              }
 
-      clear: () => set({ items: [] }),
-    }),
-    {
-      name: "addis-eats-cart", // Key used in localStorage
+              return cartItem;
+            }),
+          };
+        }
+
+        return {
+          cart: [
+            ...state.cart,
+            {
+              ...item,
+              quantity: 1,
+            },
+          ],
+        };
+      });
     },
-  ),
-);
+
+    increaseQuantity: function (id) {
+      set(function (state) {
+        return {
+          cart: state.cart.map(function (item) {
+            if (item.id === id) {
+              return {
+                ...item,
+                quantity: item.quantity + 1,
+              };
+            }
+
+            return item;
+          }),
+        };
+      });
+    },
+
+    decreaseQuantity: function (id) {
+      set(function (state) {
+        return {
+          cart: state.cart
+            .map(function (item) {
+              if (item.id === id) {
+                return {
+                  ...item,
+                  quantity: item.quantity - 1,
+                };
+              }
+
+              return item;
+            })
+            .filter(function (item) {
+              return item.quantity > 0;
+            }),
+        };
+      });
+    },
+
+    removeFromCart: function (id) {
+      set(function (state) {
+        return {
+          cart: state.cart.filter(function (item) {
+            return item.id !== id;
+          }),
+        };
+      });
+    },
+
+    clearCart: function () {
+      set({
+        cart: [],
+      });
+    },
+  };
+});

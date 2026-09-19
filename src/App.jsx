@@ -1,20 +1,27 @@
-// src/App.jsx
-import { useTheme } from "./context/ThemeContext";
-import Header from "./components/Header";
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+
 import Menu from "./components/Menu";
 import Cart from "./components/Cart";
+import CheckForm from "./components/CheckForm";
 
-export default function App() {
-  const { theme } = useTheme();
-
+function Home() {
   return (
-    // Apply the current theme ("light" or "dark") to the outer container
-    <div className={`app ${theme}`}>
-      <Header />
-      <main style={{ display: "flex", gap: "2rem", padding: "1rem" }}>
-        <Menu />
-        <Cart />
-      </main>
-    </div>
+    <>
+      <Menu />
+      <Cart />
+    </>
   );
 }
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+
+      <Route path="/checkout" element={<CheckForm />} />
+    </Routes>
+  );
+}
+
+export default App;

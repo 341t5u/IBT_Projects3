@@ -1,37 +1,90 @@
 import { useCartStore } from "../store/cartStore";
+import { useNavigate } from "react-router-dom";
 
-export default function Cart() {
-  // Narrow selectors: Subscribing only to what this component needs
-  const items = useCartStore((state) => state.items);
-  const removeItem = useCartStore((state) => state.removeItem);
-  const clear = useCartStore((state) => state.clear);
+function Cart() {
+  const navigate = useNavigate();
+  const cart = useCartStore(function (state) {
+    return state.cart;
+  });
 
-  // Derived calculation directly in the render
-  const total = items.reduce((sum, item) => sum + item.price, 0);
+  const increaseQuantity = useCartStore(function (state) {
+    return state.increaseQuantity;
+  });
+
+  const decreaseQuantity = useCartStore(function (state) {
+    return state.decreaseQuantity;
+  });
+
+  const removeFromCart = useCartStore(function (state) {
+    return state.removeFromCart;
+  });
+
+  const total = cart.reduce(function (sum, item) {
+    return sum + Number(item.price) * Number(item.quantity);
+  }, 0);
 
   return (
-    <div className="cart-container">
+    <div className="cart">
       <h2>Your Cart</h2>
 
-      {items.length === 0 ? (
-        <p>Your cart is empty.</p>
-      ) : (
-        <>
-          {items.map((item, index) => (
-            <div key={`${item.id}-${index}`} className="cart-item">
-              <span>
-                {item.name} - {item.price} ETB
-              </span>
-              <button onClick={() => removeItem(item.id)}>Remove</button>
-            </div>
-          ))}
+      {cart.map(function (item) {
+        return (
+          <div className="cart-item" key={item.id}>
+            <div className="cart-item-info">
+              <span className="cart-item-name">{item.name}</span>
 
-          <div className="cart-summary">
-            <h3>Total: {total} ETB</h3>
-            <button onClick={clear}>Clear Cart</button>
+              <span>
+                {item.price} ETB × {item.quantity}
+              </span>
+            </div>
+
+            <div className="cart-quantity">
+              <button
+                onClick={function () {
+                  decreaseQuantity(item.id);
+                }}
+              >
+                -
+              </button>
+
+              <span>{item.quantity}</span>
+
+              <button
+                onClick={function () {
+                  increaseQuantity(item.id);
+                }}
+              >
+                +
+              </button>
+            </div>
+
+            <button
+              className="remove-button"
+              onClick={function () {
+                removeFromCart(item.id);
+              }}
+            >
+              Remove
+            </button>
           </div>
-        </>
-      )}
+        );
+      })}
+
+      <div className="cart-total">
+        <span>Total</span>
+
+        <span>{total} ETB</span>
+      </div>
+      <button
+        className="pay-button"
+        onClick={function () {
+          navigate("/checkout");
+        }}
+      >
+        Pay {total} ETB
+      </button>
     </div>
   );
 }
+
+export default Cart;
