@@ -1,0 +1,73 @@
+/* Container bar holding everything */
+.header-container {
+  background-color: #1c1917;
+  color: #ffffff;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.header-container h1 {
+  margin: 0 0 1rem 0;
+  color: #f97316; /* Vibrant Addis Eats Orange */
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+/* Badge & Cart Row Layout */
+.header-badge {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap; /* Makes it mobile friendly */
+}
+
+/* Feature Sections */
+.badge1,
+.badge2,
+.badge3 {
+  background-color: #292524;
+  border-left: 4px solid #f97316;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.badge1 h3,
+.badge2 h3,
+.badge3 h3 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1rem;
+  color: #fb923c;
+}
+
+.badge1 p,
+.badge2 p,
+.badge3 p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #a8a29e;
+  line-height: 1.3;
+}
+
+/* Cart Button */
+.cart-btn {
+  background-color: #f97316;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+  white-space: nowrap;
+}
+
+.cart-btn:hover {
+  background-color: #ea580c;
+  transform: translateY(-2px);
+}

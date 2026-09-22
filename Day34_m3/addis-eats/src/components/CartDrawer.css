@@ -1,0 +1,182 @@
+/* Background Overlay Curtain */
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+/* Sliding Side Drawer */
+/* Fixed Drawer Container */
+.cart-drawer {
+  background-color: #1e293b;
+  color: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  height: 100vh; /* Lock height to full screen height */
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column; /* Stacks header, scrollable list, and footer */
+  box-sizing: border-box; /* Ensures padding is included in height */
+  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden; /* Prevent the main container from scrolling off-screen */
+}
+
+/* Scrollable Item List */
+.cart-items-list {
+  flex: 1; /* Automatically takes remaining vertical space */
+  overflow-y: auto; /* Adds scrollbar ONLY to the item list if content overflows */
+  padding-right: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Fixed Footer Section */
+.cart-footer {
+  border-top: 1px solid #334155;
+  padding-top: 1rem;
+  margin-top: auto; /* Keeps footer pinned to the bottom */
+  background-color: #1e293b;
+}
+
+.cart-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.checkout-btn {
+  width: 100%;
+  background: #f97316;
+  color: #ffffff;
+  border: none;
+  padding: 0.85rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.checkout-btn:hover {
+  background: #ea580c;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.close-drawer-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.close-drawer-btn:hover {
+  color: #ffffff;
+}
+
+.cart-items-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.cart-item {
+  display: flex;
+  gap: 1rem;
+  background: #0f172a;
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+  align-items: center;
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.cart-item-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.4rem;
+}
+
+.cart-qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cart-qty-controls button {
+  background: #334155;
+  color: white;
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.remove-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.cart-footer {
+  border-top: 1px solid #334155;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.cart-total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.checkout-btn {
+  width: 100%;
+  background: #f97316;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.checkout-btn:hover {
+  background: #ea580c;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
